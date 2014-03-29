@@ -190,10 +190,10 @@ inoremap <expr><C-e> neocomplete#cancel_popup()
 "inoremap <expr><Space> pumvisible() ? neocomplete#close_popup() : "\<Space>"
 
 " For cursor moving in insert mode(Not recommended)
-"inoremap <expr><Left> neocomplete#close_popup() . "\<Left>"
-"inoremap <expr><Right> neocomplete#close_popup() . "\<Right>"
-"inoremap <expr><Up> neocomplete#close_popup() . "\<Up>"
-"inoremap <expr><Down> neocomplete#close_popup() . "\<Down>"
+inoremap <expr><Left> neocomplete#close_popup() . "\<Left>"
+inoremap <expr><Right> neocomplete#close_popup() . "\<Right>"
+inoremap <expr><Up> neocomplete#close_popup() . "\<Up>"
+inoremap <expr><Down> neocomplete#close_popup() . "\<Down>"
 " Or set this.
 "let g:neocomplete#enable_cursor_hold_i = 1
 " Or set this.
