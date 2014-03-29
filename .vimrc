@@ -4,8 +4,8 @@
 "   git clone https://github.com/Shougo/vimproc ~/.vim/bundle/vimproc
 " ----------------------
 "
-"set nocompatible               " be iMproved
-"filetype off                   " required!
+set nocompatible               " be iMproved
+filetype off                   " required!
 
 ""if has('vim_starting')
 ""  set runtimepath+=~/.vim/bundle/neobundle.vim
@@ -179,11 +179,12 @@ function! s:my_cr_function()
 endfunction
 " <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-inoremap <expr><Enter>  pumvisible() ? "\<C-i>" : "\<Enter>"
+"inoremap <expr><Enter>  pumvisible() ? "\<C-i>" : "\<Enter>"
+inoremap <expr><Enter>  pumvisible() ? neocomplete#close_popup() : "\<Enter>"
 " <C-h>, <BS>: close popup and delete backword char.
-"inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
-inoremap <expr><Enter> neocomplete#close_popup()
+"inoremap <expr><C-h> pumvisible() ? neocomplete#smart_close_popup() : "\<C-h>"
+"inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+"inoremap <expr><Enter> neocomplete#close_popup()
 inoremap <expr><C-e> neocomplete#cancel_popup()
 " Close popup by <Space>.
 "inoremap <expr><Space> pumvisible() ? neocomplete#close_popup() : "\<Space>"
