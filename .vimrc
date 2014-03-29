@@ -4,16 +4,21 @@
 "   git clone https://github.com/Shougo/vimproc ~/.vim/bundle/vimproc
 " ----------------------
 "
-set nocompatible               " be iMproved
-filetype off                   " required!
+"set nocompatible               " be iMproved
+"filetype off                   " required!
 
+""if has('vim_starting')
+""  set runtimepath+=~/.vim/bundle/neobundle.vim
+""  call neobundle#rc(expand('~/.vim/bundle/'))
+""endif
 if has('vim_starting')
-  set runtimepath+=~/.vim/bundle/neobundle.vim
-  call neobundle#rc(expand('~/.vim/bundle/'))
+   set nocompatible               " Be iMproved
+   set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
+call neobundle#rc(expand('~/.vim/bundle/'))
 
 " originalrepos on github
-NeoBundle 'Shougo/neobundle.vim'
+NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/vimproc'
 NeoBundle 'Shougo/vimshell'
 NeoBundle 'Shougo/unite.vim'
@@ -21,19 +26,25 @@ NeoBundle 'Shougo/neocomplete'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'railscasts'
-NeoBundle 'fugitive.vim'
 NeoBundle 'surround.vim'
 NeoBundle 'mru.vim'
 NeoBundle 'The-NERD-tree'
-NeoBundle 'The-NERD-Commenter'
-NeoBundle 'EasyMotion'
-NeoBundle 'L9'
-NeoBundle 'FuzzyFinder'
-NeoBundle 'AutoClose'
+"NeoBundle 'The-NERD-Commenter'
+"NeoBundle 'EasyMotion'
+"NeoBundle 'L9'
+"NeoBundle 'FuzzyFinder'
+"NeoBundle 'AutoClose'
+NeoBundle 'flazz/vim-colorschemes'
+NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'tpope/vim-fugitive'
 " Ruby/Rails
 NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'tpope/vim-rails'
-NeoBundle 'snipMate'
+
+"NeoBundle 'snipMate'
+" If there are uninstalled bundles found on startup,
+"  " this will conveniently prompt you to install them.
+NeoBundleCheck
 
 filetype plugin indent on     " required!
 syntax on
@@ -171,9 +182,9 @@ inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr><Enter>  pumvisible() ? "\<C-i>" : "\<Enter>"
 " <C-h>, <BS>: close popup and delete backword char.
 "inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-"inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
-inoremap <expr><C-y> neocomplete#close_popup()
-"inoremap <expr><C-e> neocomplete#cancel_popup()
+inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><Enter> neocomplete#close_popup()
+inoremap <expr><C-e> neocomplete#cancel_popup()
 " Close popup by <Space>.
 "inoremap <expr><Space> pumvisible() ? neocomplete#close_popup() : "\<Space>"
 
