@@ -1,0 +1,216 @@
+" NeoBundle
+"   mkdir -p ~/.vim/bundle
+"   git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
+"   git clone https://github.com/Shougo/vimproc ~/.vim/bundle/vimproc
+" ----------------------
+"
+set nocompatible               " be iMproved
+filetype off                   " required!
+
+if has('vim_starting')
+  set runtimepath+=~/.vim/bundle/neobundle.vim
+  call neobundle#rc(expand('~/.vim/bundle/'))
+endif
+
+" originalrepos on github
+NeoBundle 'Shougo/neobundle.vim'
+NeoBundle 'Shougo/vimproc'
+NeoBundle 'Shougo/vimshell'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/neocomplete'
+NeoBundle 'Shougo/neosnippet'
+NeoBundle 'Shougo/neosnippet-snippets'
+NeoBundle 'railscasts'
+NeoBundle 'fugitive.vim'
+NeoBundle 'surround.vim'
+NeoBundle 'mru.vim'
+NeoBundle 'The-NERD-tree'
+NeoBundle 'The-NERD-Commenter'
+NeoBundle 'EasyMotion'
+NeoBundle 'L9'
+NeoBundle 'FuzzyFinder'
+NeoBundle 'AutoClose'
+" Ruby/Rails
+NeoBundle 'vim-ruby/vim-ruby'
+NeoBundle 'tpope/vim-rails'
+NeoBundle 'snipMate'
+
+filetype plugin indent on     " required!
+syntax on
+
+" display
+" ----------------------
+" colorscheme railscasts
+set number " show line number
+set showmode " show mode
+set title " show filename
+set ruler
+set list " show eol,tab,etc...
+" wrap is letter when you retrun
+set listchars=tab:>-,trail:-,extends:>,precedes:< " eol:$
+set laststatus=2
+" set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
+set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
+
+" edit
+" ----------------------
+set autoindent
+set smartindent
+set expandtab
+set smarttab
+set tabstop=2 shiftwidth=2 softtabstop=0
+set showmatch " show mactch brace
+set wildmenu
+set clipboard=unnamed,autoselect " share OS clipboard
+set autoread
+set hidden
+set showcmd
+set backspace=indent,eol,start
+
+highlight link ZenkakuSpace Error
+match ZenkakuSpace /　/
+
+" move
+" ----------------------
+nnoremap j gj
+nnoremap k gk
+nnoremap <Down> gj
+nnoremap <Up>   gk
+set whichwrap=b,s,h,l,<,>,[,]
+
+" When insert mode, enable hjkl and enable go to home/end.
+imap <C-e> <End>
+imap <C-a> <Home>
+imap <C-h> <Left>
+imap <C-j> <Down>
+imap <C-k> <Up>
+imap <C-l> <Right>
+
+" search
+" ----------------------
+set incsearch
+set ignorecase
+set smartcase
+" set hlsearch
+
+" no bell
+set visualbell
+set t_vb=
+
+set noswapfile
+set clipboard=unnamed,autoselect
+set encoding=utf-8
+set fileencodings=utf-8,cp932,euc-jp,iso-2022-jp
+
+" backup
+" --------------------
+"set backup
+"set backupdir=~/.vim/vim_backup
+"set swapfile
+"set directory=~/.vim/vim_swap
+
+" key map
+" --------------------
+"let mapleader = ","
+"noremap <CR> o<ESC>
+
+" auto command
+" --------------------
+"augroup BufferAu
+"   autocmd!
+"   " change current directory
+"   autocmd BufNewFile,BufRead,BufEnter * if isdirectory(expand("%:p:h")) && bufname("%") !~ "NERD_tree" | cd %:p:h | endif
+"augroup END
+
+" Plugin setting
+" --------------------
+
+" NEED Commenter
+"let NERDShutUp = 1 "no alart undfined filetype
+
+" rails.vim
+let g:rails_level=3
+
+" Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
+" Disable AutoComplPop.
+let g:acp_enableAtStartup = 0
+" Use neocomplete.
+let g:neocomplete#enable_at_startup = 1
+" Use smartcase.
+let g:neocomplete#enable_smart_case = 1
+" Set minimum syntax keyword length.
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
+
+" Define dictionary.
+let g:neocomplete#sources#dictionary#dictionaries = {
+     \ 'default' : '',
+     \ 'vimshell' : $HOME.'/.vimshell_hist',
+     \ 'scheme' : $HOME.'/.gosh_completions'
+     \ }
+
+" Define keyword.
+if !exists('g:neocomplete#keyword_patterns')
+   let g:neocomplete#keyword_patterns = {}
+endif
+let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+" Plugin key-mappings.
+inoremap <expr><C-g> neocomplete#undo_completion()
+inoremap <expr><C-i> neocomplete#complete_common_string()
+
+" Recommended key-mappings.
+" <CR>: close popup and save indent.
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+ return neocomplete#close_popup() . "\<CR>"
+ " For no inserting <CR> key.
+ "return pumvisible() ? neocomplete#close_popup() : "\<CR>"
+endfunction
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><Enter>  pumvisible() ? "\<C-i>" : "\<Enter>"
+" <C-h>, <BS>: close popup and delete backword char.
+"inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+"inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><C-y> neocomplete#close_popup()
+"inoremap <expr><C-e> neocomplete#cancel_popup()
+" Close popup by <Space>.
+"inoremap <expr><Space> pumvisible() ? neocomplete#close_popup() : "\<Space>"
+
+" For cursor moving in insert mode(Not recommended)
+"inoremap <expr><Left> neocomplete#close_popup() . "\<Left>"
+"inoremap <expr><Right> neocomplete#close_popup() . "\<Right>"
+"inoremap <expr><Up> neocomplete#close_popup() . "\<Up>"
+"inoremap <expr><Down> neocomplete#close_popup() . "\<Down>"
+" Or set this.
+"let g:neocomplete#enable_cursor_hold_i = 1
+" Or set this.
+"let g:neocomplete#enable_insert_char_pre = 1
+
+" AutoComplPop like behavior.
+"let g:neocomplete#enable_auto_select = 1
+
+" Shell like behavior(not recommended).
+"set completeopt+=longest
+"let g:neocomplete#enable_auto_select = 1
+"let g:neocomplete#disable_auto_complete = 1
+inoremap <expr><TAB>  pumvisible() ? "\<Down>" : "\<C-x>\<C-u>"
+
+" Enable omni completion.
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
+" Enable heavy omni completion.
+if !exists('g:neocomplete#sources#omni#input_patterns')
+  let g:neocomplete#sources#omni#input_patterns = {}
+endif
+"let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+"let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
+"let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+
+" For perlomni.vim setting.
+" https://github.com/c9s/perlomni.vim
+let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'"
