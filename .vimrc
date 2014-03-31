@@ -1,5 +1,5 @@
 " Vim install
-"   curl -O get http://ftp.vim.org/pub/vim/unix/vim-7.4.tar.bz2 (or wget)
+"   curl -O http://ftp.vim.org/pub/vim/unix/vim-7.4.tar.bz2 (or wget)
 "   tar jxvf vim-7.4.tar.bz2
 "   cd vim74
 "   ./configure \
