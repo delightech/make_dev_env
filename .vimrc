@@ -14,8 +14,9 @@
 "   --prefix=$HOME/.vim
 "   make
 "   make install
-"   echo 'export PATH="$HOME/.vim/bin/:$PATH"' >> ~/.bash_profile
-"   echo 'alias vi="$HOME/.vim/bin/vim"' >> ~/.bash_profile
+"   echo 'VIM_HOME=$HOME/.vim' >> ~/.bash_profile
+"   echo 'export PATH=$VIM_HOME:$PATH' >> ~/.bash_profile
+"   echo 'alias vi=$VIM_HOME/vim' >> ~/.bash_profile
 "   . ~/.bash_profile
 " NeoBundle install
 "   mkdir -p ~/.vim/bundle
