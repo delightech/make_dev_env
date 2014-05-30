@@ -1,4 +1,6 @@
-vimrc
+Make my development environment.
 =====
 
-my .vimrc
+install vim
+set .vimrc
+install plenv & perl to local
