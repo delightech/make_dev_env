@@ -109,6 +109,10 @@ set backspace=indent,eol,start
 highlight link ZenkakuSpace Error
 match ZenkakuSpace /　/
 
+" Perl
+autocmd BufNewFile,BufRead *.psgi   set filetype=perl
+autocmd BufNewFile,BufRead *.t      set filetype=perl
+
 " move
 " ----------------------
 nnoremap j gj
