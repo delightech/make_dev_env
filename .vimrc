@@ -71,6 +71,11 @@ NeoBundle 'kchmck/vim-coffee-script'
 "NeoBundle 'snipMate'
 NeoBundle 'petdance/vim-perl'
 NeoBundle 'hotchpotch/perldoc-vim'
+NeoBundle 'scrooloose/syntastic'
+NeoBundle 'c9s/perlomni.vim'
+NeoBundle 'mattn/perlvalidate-vim.git'
+NeoBundle 'vim-perl/vim-perl'
+NeoBundle 'airblade/vim-gitgutter'
 
 " If there are uninstalled bundles found on startup,
 "  " this will conveniently prompt you to install them.
@@ -112,8 +117,17 @@ highlight link ZenkakuSpace Error
 match ZenkakuSpace /　/
 
 " Perl
-autocmd BufNewFile,BufRead *.psgi   set filetype=perl
-autocmd BufNewFile,BufRead *.t      set filetype=perl
+"autocmd BufNewFile,BufRead *.psgi   set filetype=perl
+"autocmd BufNewFile,BufRead *.t      set filetype=perl
+augroup filetypedetect
+    au BufNewFile,BufRead *.psgi    setf perl
+    au BufNewFile,BufRead *.t       setf perl
+    au BufNewFile,BufRead *.tt      setf tt2html
+    au BufNewFile,BufRead *.tt2     setf tt2html
+    au BufNewFile,BufRead cpanfile  setf perl
+augroup END
+
+
 " Vim compiler file
 " Compiler: perl (output of "die" massaged)
 " Maintainer: Chris Forkin, chris@forkin.com
