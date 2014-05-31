@@ -27,3 +27,7 @@ git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
 #set my vimrc
 git clone https://github.com/shinjukujohnny/vimrc.git
 cp vimrc/.vimrc ~/
+
+mkdir ~/.vim/dict
+cd ~/.vim/dict
+wget https://raw.github.com/Cside/dotfiles/master/.vim/dict/perl.dict
