@@ -114,6 +114,19 @@ match ZenkakuSpace /　/
 " Perl
 autocmd BufNewFile,BufRead *.psgi   set filetype=perl
 autocmd BufNewFile,BufRead *.t      set filetype=perl
+" Vim compiler file
+" Compiler: perl (output of "die" massaged)
+" Maintainer: Chris Forkin, chris@forkin.com
+
+if exists("current_compiler")
+ finish
+endif
+
+let current_compiler = "perl"
+" A workable errorformat for "perl -c"
+setlocal errorformat=%f:%l:\ %m
+" default make
+setlocal makeprg=perl\ -MVimCompile\ -c\ %
 
 " move
 " ----------------------
@@ -269,6 +282,10 @@ elseif neobundle#is_installed('neocomplcache')
     let g:neocomplcache_keyword_patterns._ = '\h\w*'
     let g:neocomplcache_enable_camel_case_completion = 1
     let g:neocomplcache_enable_underbar_completion = 1
+    let g:neocomplcache_dictionary_filetype_lists = {
+    \ 'default'    : '',
+    \ 'perl'       : $HOME . '/.vim/dict/perl.dict'
+    \ }
 endif
 
 
