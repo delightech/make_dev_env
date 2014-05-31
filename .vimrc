@@ -69,6 +69,8 @@ NeoBundle 'skwp/vim-rspec'
 NeoBundle 'vim-scripts/errormarker.vim'
 NeoBundle 'kchmck/vim-coffee-script'
 "NeoBundle 'snipMate'
+NeoBundle 'petdance/vim-perl'
+NeoBundle 'hotchpotch/perldoc-vim'
 
 " If there are uninstalled bundles found on startup,
 "  " this will conveniently prompt you to install them.
