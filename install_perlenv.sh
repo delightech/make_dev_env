@@ -18,6 +18,9 @@ plenv rehash
 
 #install cpanm to local
 plenv install-cpanm
+#if you fail to install cpanm, use below commands.
+# wget https://raw.githubusercontent.com/miyagawa/cpanminus/master/cpanm --no-check-certificate
+# plenv exec perl cpanm App::cpanminus
 
 #install carton
 cpanm Carton
