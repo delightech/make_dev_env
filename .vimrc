@@ -40,8 +40,8 @@ NeoBundle 'Shougo/unite.vim'
 "NeoBundle 'Shougo/neocomplete'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
-NeoBundle has('lua') ? 'Shougo/neocomplete' : 'Shougo/neocomplcache'
-NeoBundle 'railscasts'
+"NeoBundle has('lua') ? 'Shougo/neocomplete' : 'Shougo/neocomplcache'
+"NeoBundle 'railscasts'
 NeoBundle 'surround.vim'
 NeoBundle 'mru.vim'
 NeoBundle 'The-NERD-tree'
@@ -52,7 +52,7 @@ NeoBundle 'The-NERD-tree'
 "NeoBundle 'AutoClose'
 NeoBundle 'flazz/vim-colorschemes'
 NeoBundle 'kien/ctrlp.vim'
-NeoBundle 'tpope/vim-rails'
+"NeoBundle 'tpope/vim-rails'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tpope/vim-endwise'
 NeoBundle 'tpope/vim-cucumber'
@@ -60,7 +60,7 @@ NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'alpaca-tc/alpaca_tags'
 NeoBundle 'AndrewRadev/switch.vim'
 NeoBundle 'bbatsov/rubocop'
-NeoBundle 'basyura/unite-rails'
+"NeoBundle 'basyura/unite-rails'
 NeoBundle 'thinca/vim-ref'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'yuku-t/vim-ref-ri'
@@ -100,8 +100,6 @@ set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%04l,%04v][%p%%]\ [L
 
 " edit
 " ----------------------
-set autoindent
-set smartindent
 set expandtab
 set smarttab
 set tabstop=4 shiftwidth=4 softtabstop=0
@@ -113,6 +111,8 @@ set hidden
 set showcmd
 set backspace=indent,eol,start
 set paste
+set autoindent
+set smartindent
 
 highlight link ZenkakuSpace Error
 match ZenkakuSpace /　/
