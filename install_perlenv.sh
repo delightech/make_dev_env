@@ -13,7 +13,7 @@ echo 'eval "$(plenv init -)"' >> ~/.bashrc
 
 #designate using version of perl(global)
 plenv install 5.8.8
-plenv local 5.8.8
+plenv global 5.8.8
 plenv rehash
 
 #install cpanm to local
