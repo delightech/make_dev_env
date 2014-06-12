@@ -110,7 +110,8 @@ set autoread
 set hidden
 set showcmd
 set backspace=indent,eol,start
-set paste
+" if paste mode, can not use autoindent.
+"set paste
 set autoindent
 set smartindent
 
