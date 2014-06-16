@@ -34,40 +34,18 @@ call neobundle#rc(expand('~/.vim/bundle/'))
 
 " originalrepos on github
 NeoBundleFetch 'Shougo/neobundle.vim'
-NeoBundle 'Shougo/vimproc'
-NeoBundle 'Shougo/vimshell'
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'mru.vim'
 NeoBundle 'The-NERD-tree'
-NeoBundle 'flazz/vim-colorschemes'
-NeoBundle 'kien/ctrlp.vim'
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'tpope/vim-endwise'
-NeoBundle 'tpope/vim-cucumber'
-NeoBundle 'vim-ruby/vim-ruby'
-NeoBundle 'alpaca-tc/alpaca_tags'
-NeoBundle 'AndrewRadev/switch.vim'
-NeoBundle 'bbatsov/rubocop'
-NeoBundle 'thinca/vim-ref'
-NeoBundle 'thinca/vim-quickrun'
-NeoBundle 'yuku-t/vim-ref-ri'
-NeoBundle 'tmhedberg/matchit'
-NeoBundle 'skwp/vim-rspec'
-NeoBundle 'vim-scripts/errormarker.vim'
-NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'vim-perl/vim-perl'
 NeoBundle 'hotchpotch/perldoc-vim'
-NeoBundle 'scrooloose/syntastic'
 NeoBundle 'c9s/perlomni.vim'
 NeoBundle 'mattn/perlvalidate-vim.git'
 NeoBundle 'vim-perl/vim-perl'
-NeoBundle 'airblade/vim-gitgutter'
 
 " If there are uninstalled bundles found on startup,
 "  " this will conveniently prompt you to install them.
 NeoBundleCheck
 
-filetype plugin indent on     " required!
+"filetype plugin indent on     " required!
 syntax on
 
 " display
@@ -121,7 +99,7 @@ augroup END
 " Maintainer: Chris Forkin, chris@forkin.com
 
 if exists("current_compiler")
- finish
+   finish
 endif
 
 let current_compiler = "perl"
@@ -142,7 +120,8 @@ set whichwrap=b,s,h,l,<,>,[,]
 imap <C-e> <End>
 imap <C-a> <Home>
 imap <C-h> <Left>
-imap <C-j> <Down>
+" C-j's config is same as Enter. So, C-j don't change.
+imap <C-m> <Down>
 imap <C-k> <Up>
 imap <C-l> <Right>
 
@@ -161,3 +140,5 @@ set noswapfile
 set clipboard=unnamed,autoselect
 set encoding=utf-8
 set fileencodings=utf-8,cp932,euc-jp,iso-2022-jp
+
+" whern insert mode, C-n and C-p display candidates for input.
