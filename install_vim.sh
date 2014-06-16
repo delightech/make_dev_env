@@ -24,11 +24,11 @@ echo 'export PATH="$HOME/.vim/bin/:$PATH"' >> ~/.bashrc
 echo 'alias vi="$HOME/.vim/bin/vim"' >> ~/.bashrc
 
 #install neobundle
-git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim 
+git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
 
 #set my vimrc
 cp .vimrc ~/
 
 mkdir ~/.vim/dict
 cd ~/.vim/dict
-wget https://raw.github.com/Cside/dotfiles/master/.vim/dict/perl.dict
+wget https://raw.github.com/Cside/dotfiles/master/.vim/dict/perl.dict --no-check-certificate
