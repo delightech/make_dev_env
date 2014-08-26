@@ -109,8 +109,9 @@ setlocal errorformat=%f:%l:\ %m
 setlocal makeprg=perl\ -MVimCompile\ -c\ %
 
 " move
+" http://www.atmarkit.co.jp/ait/articles/1107/21/news115.html
 " ----------------------
-set whichwrap=b,s,h,l,<,>,[,]
+"set whichwrap=b,s,h,l,<,>,[,]
 
 " When insert mode, enable hjkl and enable go to home/end.
 imap <C-e> <End>
