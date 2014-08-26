@@ -110,18 +110,13 @@ setlocal makeprg=perl\ -MVimCompile\ -c\ %
 
 " move
 " ----------------------
-nnoremap j gj
-nnoremap k gk
-nnoremap <Down> gj
-nnoremap <Up>   gk
 set whichwrap=b,s,h,l,<,>,[,]
 
 " When insert mode, enable hjkl and enable go to home/end.
 imap <C-e> <End>
 imap <C-a> <Home>
 imap <C-h> <Left>
-" C-j's config is same as Enter. So, C-j don't change.
-imap <C-m> <Down>
+imap <C-j> <Down>
 imap <C-k> <Up>
 imap <C-l> <Right>
 
