@@ -116,10 +116,10 @@ setlocal makeprg=perl\ -MVimCompile\ -c\ %
 " When insert mode, enable hjkl and enable go to home/end.
 imap <C-e> <End>
 imap <C-a> <Home>
-imap <C-h> <Left>
-imap <C-j> <Down>
-imap <C-k> <Up>
-imap <C-l> <Right>
+"imap <C-h> <Left>
+"imap <C-j> <Down>
+"imap <C-k> <Up>
+"imap <C-l> <Right>
 
 " search
 " ----------------------
