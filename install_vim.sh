@@ -18,10 +18,9 @@ make
 make install
 cd ..
 
-export PATH="$HOME/.vim/bin/:$PATH"
-alias vi="$HOME/.vim/bin/vim"
 echo 'export PATH="$HOME/.vim/bin/:$PATH"' >> ~/.bashrc
 echo 'alias vi="$HOME/.vim/bin/vim"' >> ~/.bashrc
+$SHELL -l
 
 #install neobundle
 git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
