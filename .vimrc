@@ -138,3 +138,6 @@ set encoding=utf-8
 set fileencodings=utf-8,cp932,euc-jp,iso-2022-jp
 
 " whern insert mode, C-n and C-p display candidates for input.
+
+" move to last editing line
+autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g`\"" | endif
