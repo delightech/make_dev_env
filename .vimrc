@@ -10,6 +10,7 @@
 "      --enable-multibyte \
 "      --enable-perlinterp \
 "      --enable-pythoninterp \
+"      --enable-rubyinterp \
 "      --enable-cscope \
 "      --enable-fontset \
 "      --enable-fail-if-missing
@@ -45,6 +46,10 @@ NeoBundle 'hotchpotch/perldoc-vim'
 NeoBundle 'c9s/perlomni.vim'
 NeoBundle 'mattn/perlvalidate-vim.git'
 NeoBundle 'vim-perl/vim-perl'
+NeoBundle 'vim-ruby/vim-ruby'
+NeoBundle 'tpope/vim-rails'
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'tpope/vim-cucumber'
 
 " If there are uninstalled bundles found on startup,
 "  " this will conveniently prompt you to install them.
@@ -65,7 +70,7 @@ set list " show eol,tab,etc...
 set listchars=tab:>-,trail:-,extends:>,precedes:< " eol:$
 set laststatus=2
 " set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
-set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
+set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]\ %{fugitive#statusline()}
 
 " edit
 " ----------------------
