@@ -11,6 +11,7 @@ cd vim74
     --enable-multibyte \
     --enable-perlinterp \
     --enable-pythoninterp \
+    --enable-rubyinterp \
     --enable-cscope \
     --enable-fontset \
     --enable-fail-if-missing
