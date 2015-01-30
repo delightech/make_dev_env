@@ -14,9 +14,8 @@ cd vim74
     --enable-rubyinterp \
     --enable-cscope \
     --enable-fontset \
-    --enable-fail-if-missing
-make
-make install
+    --enable-fail-if-missing 
+make && make install
 cd ..
 
 echo 'export PATH="$HOME/.vim/bin/:$PATH"' >> ~/.bashrc
