@@ -19,7 +19,7 @@ set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%04l,%04v][%p%%]\ [L
 " ----------------------
 set expandtab
 set smarttab
-set tabstop=4 shiftwidth=4 softtabstop=0
+set tabstop=2 shiftwidth=2 softtabstop=0
 set showmatch " show mactch brace
 set wildmenu
 set clipboard=unnamed,autoselect " share OS clipboard
