@@ -22,3 +22,4 @@ cp .vimrc ~/
 mkdir ~/.vim/dict
 cd ~/.vim/dict
 wget https://raw.github.com/Cside/dotfiles/master/.vim/dict/perl.dict --no-check-certificate
+
