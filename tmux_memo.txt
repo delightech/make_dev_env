@@ -1,0 +1,38 @@
+# window list
+tmux ls
+
+# attach
+tmux a
+tmux a -t ${window_name}
+
+# detach
+prefix + d
+
+# choose-session
+prefix + :choose-session
+
+# screen scrole
+prefix + [
+# pageUp
+fn + ↑
+# pageDown
+fn + ↓
+# move up
+C-p
+# move down
+C-n
+# move right
+C-f
+# move left
+C-b
+# move mode off
+esc
+
+# kill-window
+prefix + :kill-window
+
+# copy mode on
+prefix + v
+# copy mode on の状態でマウスで範囲選択すると、それがクリップボードにコピーされる。
+# paste
+prefix + p
