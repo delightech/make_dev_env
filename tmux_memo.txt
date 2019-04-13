@@ -32,7 +32,9 @@ esc
 prefix + :kill-window
 
 # copy mode on
-prefix + v
-# copy mode on の状態でマウスで範囲選択すると、それがクリップボードにコピーされる。
-# paste
+prefix + [
+# vi風な選択が可能。マウスのドラッグだけでもコピーされ、クリップボードにもコピーされる。
+# paste(Ctrl pはpainの移動に割り当てているので注意)。Cmd + vでも貼り付け可能。
 prefix + p
+# コピーモードの終了
+q
