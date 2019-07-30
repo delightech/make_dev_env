@@ -28,9 +28,6 @@ C-b
 # move mode off
 esc
 
-# pane分割解除(全ての分割が破棄されてそれぞれが独立したWindowとなる)
-prefix + !
-
 # kill-window
 prefix + :kill-window
 
