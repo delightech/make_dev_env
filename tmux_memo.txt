@@ -28,6 +28,12 @@ C-b
 # move mode off
 esc
 
+<<<<<<< HEAD
+=======
+# pane分割解除(全ての分割が破棄される)
+prefix + !
+
+>>>>>>> parent of d5e1e77... modify memo for tmux
 # kill-window
 prefix + :kill-window
 
