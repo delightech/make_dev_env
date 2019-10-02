@@ -1,6 +1,6 @@
 set -x PS1 '\u \W $ '
 alias ll='ls -l'
 
-set -x PATH /usr/local/opt/imagemagick@6/bin $PATH
-set -x PATH /usr/local/opt/mysql@5.6/bin $PATH
-
+#set -U fish_user_paths /Users/delightech/work/Utils/src/perl/ $fish_user_paths
+alias uri_esc='perl /Users/delightech/work/Utils/src/perl/easy_uri_escape.pl'
+alias uri_unesc='perl /Users/delightech/work/Utils/src/perl/easy_uri_unescape.pl'
