@@ -1,3 +1,63 @@
+" Vim install
+"  mkdir -p ~/.vim/bundle
+"  #install vim
+"  curl -O http://ftp.vim.org/pub/vim/unix/vim-7.4.tar.bz2
+"  tar jxvf vim-7.4.tar.bz2
+"  cd vim74
+"  ./configure \
+"      --prefix=$HOME/.vim \
+"      --with-features=huge \
+"      --enable-multibyte \
+"      --enable-perlinterp \
+"      --enable-pythoninterp \
+"      --enable-rubyinterp \
+"      --enable-cscope \
+"      --enable-fontset \
+"      --enable-fail-if-missing
+"  make
+"  make install
+"  cd ..
+"
+"  echo 'export PATH="$HOME/.vim/bin/:$PATH"' >> ~/.bashrc
+"  echo 'alias vi="$HOME/.vim/bin/vim"' >> ~/.bashrc
+"  $SHELL -l
+"
+"  #install neobundle
+"  git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
+"
+"  mkdir ~/.vim/dict
+"  cd ~/.vim/dict
+"  wget https://raw.github.com/Cside/dotfiles/master/.vim/dict/perl.dict --no-check-certificate
+
+set nocompatible               " be iMproved
+filetype off                   " required!
+
+if has('vim_starting')
+   set nocompatible               " Be iMproved
+   set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
+call neobundle#begin(expand('~/.vim/bundle/'))
+NeoBundleFetch 'Shougo/neobundle.vim'
+call neobundle#end()
+
+" originalrepos on github
+NeoBundleFetch 'Shougo/neobundle.vim'
+NeoBundle 'The-NERD-tree'
+NeoBundle 'vim-perl/vim-perl'
+NeoBundle 'hotchpotch/perldoc-vim'
+NeoBundle 'c9s/perlomni.vim'
+NeoBundle 'mattn/perlvalidate-vim.git'
+NeoBundle 'vim-perl/vim-perl'
+NeoBundle 'vim-ruby/vim-ruby'
+NeoBundle 'tpope/vim-rails'
+"NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'tpope/vim-cucumber'
+
+" If there are uninstalled bundles found on startup,
+"  " this will conveniently prompt you to install them.
+NeoBundleCheck
+
+"filetype plugin indent on     " required!
 syntax on
 
 " display
@@ -19,7 +79,7 @@ set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%04l,%04v][%p%%]\ [L
 " ----------------------
 set expandtab
 set smarttab
-set tabstop=2 shiftwidth=2 softtabstop=0
+set tabstop=4 shiftwidth=4 softtabstop=0
 set showmatch " show mactch brace
 set wildmenu
 set clipboard=unnamed,autoselect " share OS clipboard
