@@ -9,7 +9,8 @@ set runtimepath+=$HOME/.cache/dein/repos/github.com/Shougo/dein.vim
 " Required:
 " mkdir -p ~/.cache/dein
 " cd ~/.cache/dein
-" curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
+" curl -O https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh
+" sh ./installer.sh ~/.cache/dein
 if dein#load_state('$HOME/.cache/dein')
   call dein#begin('$HOME/.cache/dein')
 
