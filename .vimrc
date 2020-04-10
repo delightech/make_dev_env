@@ -92,4 +92,4 @@ set fileencodings=utf-8,cp932,euc-jp,iso-2022-jp
 " line color
 "highlight LineNr ctermfg=darkyellow
 " text color when background color is dark
-set background=dark
+"set background=dark
