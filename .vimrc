@@ -23,6 +23,7 @@ if dein#load_state('$HOME/.cache/dein')
   call dein#add('tpope/vim-endwise')
   call dein#add('tpope/vim-fugitive')
   call dein#add('scrooloose/syntastic.git')
+  call dein#add('vim-syntastic/syntastic')
 
   " Required:
   call dein#end()
@@ -93,3 +94,13 @@ set fileencodings=utf-8,cp932,euc-jp,iso-2022-jp
 "highlight LineNr ctermfg=darkyellow
 " text color when background color is dark
 "set background=dark
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+" syntax check
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
