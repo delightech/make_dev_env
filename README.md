@@ -1,9 +1,2 @@
-Make my development environment.
+my development config.
 =====
-
-install vim
-
-set .vimrc
-
-install plenv & perl to local
-
