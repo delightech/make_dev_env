@@ -11,19 +11,26 @@ set runtimepath+=$HOME/.cache/dein/repos/github.com/Shougo/dein.vim
 " cd ~/.cache/dein
 " curl -O https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh
 " sh ./installer.sh ~/.cache/dein
-if dein#load_state('$HOME/.cache/dein')
-  call dein#begin('$HOME/.cache/dein')
+if dein#load_state('~/.cache/dein')
+  call dein#begin('~/.cache/dein')
 
   " Let dein manage dein
   " Required:
-  call dein#add('$HOME/.cache/dein/repos/github.com/Shougo/dein.vim')
+  call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
+  call dein#add('Shougo/deoplete.nvim')
+  if !has('nvim')
+    call dein#add('roxma/nvim-yarp')
+    call dein#add('roxma/vim-hug-neovim-rpc')
+  endif
 
   " Add or remove your plugins here like this:
-  call dein#add('Shougo/vimproc.vim')
   call dein#add('tpope/vim-endwise')
   call dein#add('tpope/vim-fugitive')
-  call dein#add('scrooloose/syntastic.git')
-  call dein#add('vim-syntastic/syntastic')
+  call dein#add('vim-airline/vim-airline')
+  call dein#add('vim-airline/vim-airline-themes')
+  call dein#add('preservim/nerdtree')
+  call dein#add('jiangmiao/auto-pairs')
+  call dein#add('tomasr/molokai')
 
   " Required:
   call dein#end()
@@ -41,8 +48,16 @@ endif
 
 "End dein Scripts-------------------------
 
+" color theme
+colorscheme molokai
 
 syntax on
+" 256 color
+set t_Co=256
+" truecolor
+set termguicolors
+" background color
+set background=dark
 
 " display
 " ----------------------
@@ -89,19 +104,3 @@ set vb t_vb=
 set noswapfile
 set encoding=utf-8
 set fileencodings=utf-8,cp932,euc-jp,iso-2022-jp
-
-" line color
-"highlight LineNr ctermfg=darkyellow
-" text color when background color is dark
-"set background=dark
-
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-" syntax check
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_mode_map = { 'mode': 'passive' }
