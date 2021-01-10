@@ -70,7 +70,7 @@ set list " show eol,tab,etc...
 " wrap is letter when you retrun
 set listchars=tab:>-,trail:-,extends:>,precedes:< " eol:$
 set laststatus=2
-set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]\ %{fugitive#statusline()}
+"set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]\ %{fugitive#statusline()}
 
 " edit
 " ----------------------
