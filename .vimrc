@@ -27,7 +27,6 @@ if dein#load_state('~/.cache/dein')
   call dein#add('tpope/vim-endwise')
   call dein#add('tpope/vim-fugitive')
   call dein#add('vim-airline/vim-airline')
-  call dein#add('vim-airline/vim-airline-themes')
   call dein#add('preservim/nerdtree')
   call dein#add('jiangmiao/auto-pairs')
   call dein#add('tomasr/molokai')
@@ -48,6 +47,9 @@ endif
 
 "End dein Scripts-------------------------
 
+" change line no color
+autocmd ColorScheme * highlight LineNr guifg=#c0c0c0
+
 " color theme
 colorscheme molokai
 
@@ -61,7 +63,6 @@ set background=dark
 
 " display
 " ----------------------
-" colorscheme railscasts
 set number " show line number
 set showmode " show mode
 set title " show filename
