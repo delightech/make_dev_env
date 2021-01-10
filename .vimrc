@@ -7,7 +7,6 @@ Plugin 'VundleVim/Vundle.vim'
 
 " 導入したいプラグインを以下に列挙
 " Plugin '[Github Author]/[Github repo]' の形式で記入
-Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-fugitive'
 Plugin 'vim-airline/vim-airline'
