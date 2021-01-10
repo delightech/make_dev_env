@@ -1,51 +1,24 @@
-"dein Scripts-----------------------------
-if &compatible
-  set nocompatible               " Be iMproved
-endif
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-" Required:
-set runtimepath+=$HOME/.cache/dein/repos/github.com/Shougo/dein.vim
+Plugin 'VundleVim/Vundle.vim'
 
-" Required:
-" mkdir -p ~/.cache/dein
-" cd ~/.cache/dein
-" curl -O https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh
-" sh ./installer.sh ~/.cache/dein
-if dein#load_state('~/.cache/dein')
-  call dein#begin('~/.cache/dein')
+" 導入したいプラグインを以下に列挙
+" Plugin '[Github Author]/[Github repo]' の形式で記入
+Plugin 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-fugitive'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'tomasr/molokai'
 
-  " Let dein manage dein
-  " Required:
-  call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
-  call dein#add('Shougo/deoplete.nvim')
-  if !has('nvim')
-    call dein#add('roxma/nvim-yarp')
-    call dein#add('roxma/vim-hug-neovim-rpc')
-  endif
-
-  " Add or remove your plugins here like this:
-  call dein#add('tpope/vim-endwise')
-  call dein#add('tpope/vim-fugitive')
-  call dein#add('vim-airline/vim-airline')
-  call dein#add('preservim/nerdtree')
-  call dein#add('jiangmiao/auto-pairs')
-  call dein#add('tomasr/molokai')
-
-  " Required:
-  call dein#end()
-  call dein#save_state()
-endif
-
-" Required:
+call vundle#end()
 filetype plugin indent on
-syntax enable
 
-" If you want to install not installed plugins on startup.
-if dein#check_install()
-  call dein#install()
-endif
-
-"End dein Scripts-------------------------
+let g:airline_theme='luna'
 
 " change line no color
 autocmd ColorScheme * highlight LineNr guifg=#c0c0c0
