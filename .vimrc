@@ -1,3 +1,6 @@
+" 初回起動時に以下を実行
+" :PluginInstall
+
 set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
