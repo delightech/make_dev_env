@@ -82,3 +82,9 @@ set vb t_vb=
 set noswapfile
 set encoding=utf-8
 set fileencodings=utf-8,cp932,euc-jp,iso-2022-jp
+
+" save last cursor position
+augroup vimrcEx
+  au BufRead * if line("'\"") > 0 && line("'\"") <= line("$") |
+  \ exe "normal g`\"" | endif
+augroup END
