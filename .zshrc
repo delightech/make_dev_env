@@ -40,7 +40,13 @@ alias gls="gls --color"
 
 zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
 
-alias ll="ls -l"
+alias ll="ls -alF"
 
 #ビープ音ならなさない
 setopt nobeep
+
+# for installing ruby
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
+export CFLAGS="-Wno-error=implicit-function-declaration"
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
