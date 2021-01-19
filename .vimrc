@@ -26,6 +26,7 @@ let g:airline_theme='luna'
 
 " change line no color
 autocmd ColorScheme * highlight LineNr guifg=#c0c0c0
+autocmd ColorScheme * highlight Comment ctermfg=44
 
 " color theme
 colorscheme molokai
