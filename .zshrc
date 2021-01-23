@@ -48,6 +48,7 @@ setopt nobeep
 # for installing ruby
 export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 export CFLAGS="-Wno-error=implicit-function-declaration"
+eval "$(anyenv init -)"
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 export PATH="$HOME/.nodenv/bin:$PATH"
