@@ -39,6 +39,8 @@ set termguicolors
 " background color
 set background=dark
 
+colorscheme elflord
+
 " display
 " ----------------------
 set number " show line number
