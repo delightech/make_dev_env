@@ -6,4 +6,6 @@ autodetach on
 defscrollback 10240
 bind U eval "encoding utf-8" "!!!echo 'export LANG=ja_JP.UTF-8'"
 bind E eval "encoding euc" "!!!echo 'export LANG=ja_JP.EUC-JP'"
-
+# added 2021/02/23
+defbce on
+term xterm-256color

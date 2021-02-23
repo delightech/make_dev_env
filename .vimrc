@@ -39,6 +39,7 @@ set termguicolors
 " background color
 set background=dark
 
+" added 2021/02/23
 colorscheme elflord
 
 " display
