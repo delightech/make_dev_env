@@ -28,6 +28,7 @@ let g:airline_theme='luna'
 autocmd ColorScheme * highlight LineNr guifg=#c0c0c0
 autocmd ColorScheme * highlight Comment ctermfg=44
 
+" 以下のcolor設定は　、screen on ubuntu ではコメントアウトする
 " color theme
 colorscheme molokai
 
