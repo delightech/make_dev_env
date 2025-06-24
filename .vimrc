@@ -1,13 +1,13 @@
 " 初回起動時に以下を実行
-" :PluginInstall
+"   git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+" vimを起動して下記を実行
+"   :PluginInstall
 
 set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-" get Vundle.vim
-" git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 Plugin 'VundleVim/Vundle.vim'
 
 " 導入したいプラグインを以下に列挙
